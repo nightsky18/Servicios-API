@@ -1,0 +1,141 @@
+[
+  {
+    "caso": "BUENO_1",
+    "descripcion": "Empleado válido completo",
+    "body": {
+      "nombre": "Ana María López",
+      "edad": 28,
+      "fechaContratacion": "2023-08-20T00:00:00Z",
+      "activo": true,
+      "habilidades": ["JavaScript", "React"],
+      "jefe": null,
+      "salarioPreciso": 3500000.75,
+      "metadata": {
+        "lastLogin": "2026-03-05T18:45:30Z",
+        "certificaciones": ["AWS Certified", "Scrum Master"]
+      },
+      "configuraciones": {
+        "idioma": "es",
+        "timezone": "America/Bogota",
+        "moneda": "COP"
+      },
+      "fotoPerfil": null
+    }
+  },
+  {
+    "caso": "BUENO_2",
+    "descripcion": "Empleado con pocas habilidades y jefe referenciado",
+    "body": {
+      "nombre": "Carlos Pérez",
+      "edad": 35,
+      "fechaContratacion": "2024-01-15T00:00:00Z",
+      "activo": false,
+      "habilidades": ["Node.js"],
+      "jefe": "65f1a2b3c4d5e6f7a8b9c0d1",
+      "salarioPreciso": 4200000.5,
+      "metadata": {
+        "lastLogin": "2026-03-01T10:00:00Z"
+      },
+      "configuraciones": {
+        "idioma": "en",
+        "timezone": "America/Bogota"
+      },
+      "fotoPerfil": null
+    }
+  },
+  {
+    "caso": "BUENO_3",
+    "descripcion": "Empleado mínimo: sin habilidades ni metadata explícita",
+    "body": {
+      "nombre": "Lucía Gómez",
+      "edad": 22,
+      "fechaContratacion": "2025-02-01T00:00:00Z",
+      "activo": true,
+      "habilidades": [],
+      "jefe": null,
+      "salarioPreciso": 2500000,
+      "metadata": {},
+      "configuraciones": {},
+      "fotoPerfil": null
+    }
+  },
+  {
+    "caso": "MALO_1",
+    "descripcion": "Edad fuera de rango (menor de 18)",
+    "body": {
+      "nombre": "Pedro Joven",
+      "edad": 16,
+      "fechaContratacion": "2024-05-10T00:00:00Z",
+      "activo": true,
+      "habilidades": ["HTML"],
+      "jefe": null,
+      "salarioPreciso": 1800000,
+      "metadata": {},
+      "configuraciones": {},
+      "fotoPerfil": null
+    }
+  },
+  {
+    "caso": "MALO_2",
+    "descripcion": "Nombre demasiado corto y salario como string",
+    "body": {
+      "nombre": "A",
+      "edad": 30,
+      "fechaContratacion": "2024-03-10T00:00:00Z",
+      "activo": true,
+      "habilidades": ["CSS"],
+      "jefe": null,
+      "salarioPreciso": "3000000.99",
+      "metadata": {},
+      "configuraciones": {},
+      "fotoPerfil": null
+    }
+  },
+  {
+    "caso": "MALO_3",
+    "descripcion": "Falta campo requerido salarioPreciso",
+    "body": {
+      "nombre": "María Sin Salario",
+      "edad": 40,
+      "fechaContratacion": "2022-11-01T00:00:00Z",
+      "activo": false,
+      "habilidades": ["SQL"],
+      "jefe": null,
+      "metadata": {},
+      "configuraciones": {},
+      "fotoPerfil": null
+    }
+  },
+  {
+    "caso": "MALO_4",
+    "descripcion": "ObjectId inválido en jefe",
+    "body": {
+      "nombre": "Jefe Raro",
+      "edad": 50,
+      "fechaContratacion": "2020-01-01T00:00:00Z",
+      "activo": true,
+      "habilidades": ["Liderazgo"],
+      "jefe": "NO_ES_UN_OBJECTID",
+      "salarioPreciso": 7000000,
+      "metadata": {},
+      "configuraciones": {},
+      "fotoPerfil": null
+    }
+  },
+  {
+    "caso": "MALO_5",
+    "descripcion": "Tipo de dato erróneo: habilidades como string",
+    "body": {
+      "nombre": "Tipo Raro",
+      "edad": 33,
+      "fechaContratacion": "2023-10-10T00:00:00Z",
+      "activo": true,
+      "habilidades": "Java,Python",
+      "jefe": null,
+      "salarioPreciso": 3100000,
+      "metadata": {},
+      "configuraciones": {},
+      "fotoPerfil": null
+    }
+  }
+]
