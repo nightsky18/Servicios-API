@@ -1,0 +1,100 @@
+{
+  "empleados": [
+    {
+      "caso": "BUENO_1",
+      "esperadoStatus": 201,
+      "body": {
+        "nombre": "Ana María QA",
+        "edad": 29,
+        "fechaContratacion": "2023-08-20T00:00:00Z",
+        "activo": true,
+        "habilidades": ["Postman", "SoapUI"],
+        "jefe": null,
+        "salarioPreciso": 3600000.75,
+        "metadata": {
+          "lastLogin": "2026-03-05T18:45:30Z",
+          "origen": "soapui"
+        },
+        "configuraciones": {
+          "idioma": "es",
+          "timezone": "America/Bogota"
+        },
+        "fotoPerfil": null
+      }
+    },
+    {
+      "caso": "BUENO_2",
+      "esperadoStatus": 201,
+      "body": {
+        "nombre": "Carlos QA Senior",
+        "edad": 38,
+        "fechaContratacion": "2022-01-15T00:00:00Z",
+        "activo": false,
+        "habilidades": ["Node.js", "Testing"],
+        "jefe": null,
+        "salarioPreciso": 4800000.5,
+        "metadata": {
+          "nivel": "senior",
+          "herramientas": ["Jest", "Cypress"]
+        },
+        "configuraciones": {
+          "idioma": "en",
+          "timezone": "America/Bogota",
+          "moneda": "COP"
+        },
+        "fotoPerfil": null
+      }
+    },
+    {
+      "caso": "MALO_1",
+      "esperadoStatus": 400,
+      "body": {
+        "nombre": "Menor de Edad QA",
+        "edad": 17,
+        "fechaContratacion": "2024-05-10T00:00:00Z",
+        "activo": true,
+        "habilidades": ["JUnit"],
+        "jefe": null,
+        "salarioPreciso": 1500000,
+        "metadata": {
+          "comentario": "edad fuera de rango"
+        },
+        "configuraciones": {},
+        "fotoPerfil": null
+      }
+    },
+    {
+      "caso": "MALO_2",
+      "esperadoStatus": 400,
+      "body": {
+        "nombre": "X",
+        "edad": 30,
+        "fechaContratacion": "2024-03-10T00:00:00Z",
+        "activo": true,
+        "habilidades": ["Selenium"],
+        "jefe": null,
+        "salarioPreciso": "3000000.99",
+        "metadata": {},
+        "configuraciones": {},
+        "fotoPerfil": null
+      }
+    },
+    {
+      "caso": "MALO_3",
+      "esperadoStatus": 400,
+      "body": {
+        "nombre": "Sin Salario QA",
+        "edad": 45,
+        "fechaContratacion": "2021-11-01T00:00:00Z",
+        "activo": false,
+        "habilidades": ["API Testing"],
+        "jefe": null,
+        "metadata": {
+          "nota": "falta salarioPreciso"
+        },
+        "configuraciones": {},
+        "fotoPerfil": null
+      }
+    }
+  ]
+}
