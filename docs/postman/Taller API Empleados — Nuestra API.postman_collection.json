@@ -1,0 +1,352 @@
+{
+  "info": {
+    "_postman_id": "9c0b63ef-10b7-4c49-be30-a915abd3cbad",
+    "name": "Taller API Empleados — Nuestra API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38562704"
+  },
+  "item": [
+    {
+      "name": "Request 1 — POST Crear empleado (caso bueno)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Ana María López\",\r\n  \"edad\": 28,\r\n  \"fechaContratacion\": \"2023-08-20T00:00:00Z\",\r\n  \"activo\": true,\r\n  \"habilidades\": [\"JavaScript\", \"React\"],\r\n  \"jefe\": null,\r\n  \"salarioPreciso\": 3500000.75,\r\n  \"metadata\": {\r\n    \"lastLogin\": \"2026-03-05T18:45:30Z\",\r\n    \"certificaciones\": [\"AWS Certified\", \"Scrum Master\"]\r\n  },\r\n  \"configuraciones\": {\r\n    \"idioma\": \"es\",\r\n    \"timezone\": \"America/Bogota\",\r\n    \"moneda\": \"COP\"\r\n  },\r\n  \"fotoPerfil\": null\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/empleados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 2 — POST Crear MÚLTIPLES empleados (BUENO_2 y BUENO_3)",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "[\r\n  {\r\n    \"nombre\": \"Carlos Pérez\",\r\n    \"edad\": 35,\r\n    \"fechaContratacion\": \"2024-01-15T00:00:00Z\",\r\n    \"activo\": false,\r\n    \"habilidades\": [\"Node.js\", \"MongoDB\"],\r\n    \"jefe\": null,\r\n    \"salarioPreciso\": 4200000.50,\r\n    \"metadata\": { \"lastLogin\": \"2026-03-01T10:00:00Z\" },\r\n    \"configuraciones\": { \"idioma\": \"en\", \"timezone\": \"America/Bogota\" },\r\n    \"fotoPerfil\": null\r\n  },\r\n  {\r\n    \"nombre\": \"Lucía Gómez\",\r\n    \"edad\": 22,\r\n    \"fechaContratacion\": \"2025-02-01T00:00:00Z\",\r\n    \"activo\": true,\r\n    \"habilidades\": [],\r\n    \"jefe\": null,\r\n    \"salarioPreciso\": 2500000,\r\n    \"metadata\": {},\r\n    \"configuraciones\": {},\r\n    \"fotoPerfil\": null\r\n  }\r\n]\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/empleados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 3 — POST MALO_1: Edad menor de 18",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Pedro Joven\",\r\n  \"edad\": 16,\r\n  \"fechaContratacion\": \"2024-05-10T00:00:00Z\",\r\n  \"activo\": true,\r\n  \"habilidades\": [\"HTML\"],\r\n  \"jefe\": null,\r\n  \"salarioPreciso\": 1800000,\r\n  \"metadata\": {},\r\n  \"configuraciones\": {},\r\n  \"fotoPerfil\": null\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/empleados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 4  POST MALO_2: Nombre muy corto",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"A\",\r\n  \"edad\": 30,\r\n  \"fechaContratacion\": \"2024-03-10T00:00:00Z\",\r\n  \"activo\": true,\r\n  \"habilidades\": [\"CSS\"],\r\n  \"jefe\": null,\r\n  \"salarioPreciso\": 3000000,\r\n  \"metadata\": {},\r\n  \"configuraciones\": {},\r\n  \"fotoPerfil\": null\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/empleados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 5 POST MALO_3: Sin salarioPreciso",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"María Sin Salario\",\r\n  \"edad\": 40,\r\n  \"fechaContratacion\": \"2022-11-01T00:00:00Z\",\r\n  \"activo\": false,\r\n  \"habilidades\": [\"SQL\"],\r\n  \"jefe\": null,\r\n  \"metadata\": {},\r\n  \"configuraciones\": {},\r\n  \"fotoPerfil\": null\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/empleados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 6 POST MALO_4: ObjectId inválido en jefe",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Jefe Raro\",\r\n  \"edad\": 50,\r\n  \"fechaContratacion\": \"2020-01-01T00:00:00Z\",\r\n  \"activo\": true,\r\n  \"habilidades\": [\"Liderazgo\"],\r\n  \"jefe\": \"NO_ES_UN_OBJECTID\",\r\n  \"salarioPreciso\": 7000000,\r\n  \"metadata\": {},\r\n  \"configuraciones\": {},\r\n  \"fotoPerfil\": null\r\n}\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/empleados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 7 GET Listar TODOS",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/empleados",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 8 GET por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/empleados/69b0b79ef5e2f3d3ff29d27f",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados",
+            "69b0b79ef5e2f3d3ff29d27f"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 9 GET ID inexistente (404)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/empleados/00000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados",
+            "00000"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 10 PATCH Actualizar parcialmente (Ana)",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"salarioPreciso\": 4500000,\r\n  \"habilidades\": [\"JavaScript\", \"React\", \"Node.js\"]\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/empleados/69b0b08b6ed7ed248138a603",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados",
+            "69b0b08b6ed7ed248138a603"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 11 DELETE Eliminar (Carlos)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Carlos Pérez Actualizado\",\r\n  \"edad\": 36,\r\n  \"fechaContratacion\": \"2024-01-15T00:00:00Z\",\r\n  \"activo\": true,\r\n  \"habilidades\": [\"Node.js\", \"MongoDB\", \"Docker\", \"AWS\"],\r\n  \"jefe\": null,\r\n  \"salarioPreciso\": 5500000,\r\n  \"metadata\": { \"nivelSenior\": true, \"aniosExperiencia\": 10 },\r\n  \"configuraciones\": { \"idioma\": \"es\", \"timezone\": \"America/Bogota\" },\r\n  \"fotoPerfil\": null\r\n}\r\n\r\n"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/empleados/69b0b79ef5e2f3d3ff29d27e",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados",
+            "69b0b79ef5e2f3d3ff29d27e"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Request 12 PUT Reemplazar completamente (Carlos)",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"nombre\": \"Carlos Pérez Actualizado\",\r\n  \"edad\": 36,\r\n  \"fechaContratacion\": \"2024-01-15T00:00:00Z\",\r\n  \"activo\": true,\r\n  \"habilidades\": [\"Node.js\", \"MongoDB\", \"Docker\", \"AWS\"],\r\n  \"jefe\": null,\r\n  \"salarioPreciso\": 5500000,\r\n  \"metadata\": { \"nivelSenior\": true, \"aniosExperiencia\": 10 },\r\n  \"configuraciones\": { \"idioma\": \"es\", \"timezone\": \"America/Bogota\" },\r\n  \"fotoPerfil\": null\r\n}\r\n\r\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/empleados/69b0b79ef5e2f3d3ff29d27e",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados",
+            "69b0b79ef5e2f3d3ff29d27e"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Resquest 13  DELETE ID inexistente (404)",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/empleados/00000",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "empleados",
+            "00000"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
