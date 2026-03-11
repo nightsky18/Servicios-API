@@ -208,18 +208,33 @@ Cumple requerimiento de **10 campos con 10 TIPOS DIFERENTES** de MongoDB/Mongoos
 
 # 🧪 Pruebas con Postman y SoapUI 
 
-## Postman
-**¿Qué es?** Cliente HTTP gráfico para probar APIs (alternativa a curl).
+##  Pruebas con Postman
 
-### Pasos Rápidos (API Local: localhost:3000/api/empleados)
-1. **Nueva Colección:** "Taller API Empleados"
-2. **GET Listar:** `GET /api/empleados` → 200 OK + `[]`
-3. **POST Crear:** JSON empleado → 201 + copia `_id`
-4. **GET ID:** `GET /api/empleados/:id` → 200 OK
-5. **PATCH Actualizar:** `PATCH /api/empleados/:id` → 200 OK
-6. **DELETE Eliminar:** `DELETE /api/empleados/:id` → 200 OK
+**¿Qué es Postman?** Cliente HTTP gráfico para probar APIs sin escribir código.
 
-**Exportar:** `docs/postman-empleados.json` + screenshots
+### 📄 Documentación Publicada
+🔗 **[Ver colección completa en Postman Docs](https://documenter.getpostman.com/view/38562704/2sBXierZW7)**
+
+La documentación incluye todos los endpoints con ejemplos de request y response.
+
+### Pruebas realizadas (13 casos — API Propia)
+
+| # | Nombre | Método | Endpoint | Resultado Esperado |
+|---|--------|--------|----------|--------------------|
+| 1 | Crear empleado válido | `POST` | `/api/empleados` | 201 ✅ |
+| 2 | Crear múltiples empleados | `POST` | `/api/empleados` | 201 ✅ |
+| 3 | Edad menor de 18 | `POST` | `/api/empleados` | 400 ❌ |
+| 4 | Nombre muy corto | `POST` | `/api/empleados` | 400 ❌ |
+| 5 | Sin salarioPreciso | `POST` | `/api/empleados` | 400 ❌ |
+| 6 | ObjectId inválido en jefe | `POST` | `/api/empleados` | 400 ❌ |
+| 7 | Listar todos | `GET` | `/api/empleados` | 200 ✅ |
+| 8 | Obtener por ID | `GET` | `/api/empleados/:id` | 200 ✅ |
+| 9 | ID inexistente | `GET` | `/api/empleados/000...` | 404 ❌ |
+| 10 | Actualizar parcial | `PATCH` | `/api/empleados/:id` | 200 ✅ |
+| 11 | Reemplazar completo | `PUT` | `/api/empleados/:id` | 200 ✅ |
+| 12 | Eliminar empleado | `DELETE` | `/api/empleados/:id` | 200 ✅ |
+| 13 | DELETE inexistente | `DELETE` | `/api/empleados/000...` | 404 ❌ |
+
 
 ## SoapUI
 **¿Qué es?** Herramienta pro para testing REST/SOAP (QA empresarial).

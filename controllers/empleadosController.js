@@ -121,15 +121,29 @@ const replaceEmpleado = async (req, res) => {
  */
 const deleteEmpleado = async (req, res) => {
     try {
+        //  VALIDACIÓN AGREGADA
+        if (!mongoose.Types.ObjectId.isValid(req.params.id)) {
+            return res.status(404).json({ 
+                mensaje: 'Empleado no encontrado',
+                detalle: 'El ID proporcionado no tiene formato válido'
+            });
+        }
+
         const empleadoEliminado = await Empleado.findByIdAndDelete(req.params.id);
+        
         if (!empleadoEliminado) {
             return res.status(404).json({ mensaje: 'Empleado no encontrado' });
         }
+        
         res.status(200).json({ mensaje: 'Empleado eliminado con éxito' });
     } catch (error) {
-        res.status(500).json({ mensaje: 'Error al eliminar', error: error.message });
+        res.status(500).json({ 
+            mensaje: 'Error al eliminar', 
+            error: error.message 
+        });
     }
 };
+
 
 module.exports = {
     getEmpleados,
