@@ -1,14 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="bd901550-23ca-422b-a204-fa7a34d41c64" activeEnvironment="Default" name="Taller API Jsonplaceholder" soapui-version="5.9.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="c2fa480d-073d-444b-8521-619dc373674b" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://jsonplaceholder.typicode.com" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache/><con:endpoints><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint></con:endpoints><con:resource name="" path="/posts/101" id="de77b2bf-fca5-47af-b18d-7b7dab43cc43"><con:settings/><con:parameters/><con:method name="1" id="48adc075-ac9a-4e8c-8331-ac9d08c33844" method="DELETE"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200 201</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>404</con:status><con:params/><con:element>Fault</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Request 1 GET Listar todos los usuarios" id="dd7a8fab-cd3a-4b3e-83ed-823fc1f9c131" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/users</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Request 2 GET Usuario por ID=1" id="b3c75135-24a4-40e4-8b80-ec096c59e4cf" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/users/1</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Resquest 3 GET Usuario inexistente ID=999" id="ced01d82-264b-4a60-826b-358424ef0bbd" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/users/999</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Resquest 4 GET Posts del usuario ID=1" id="acf234f1-b6eb-45f9-a074-6cc854d7a96e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/pots/1</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Resquest 5 POST Crear post nuevo" id="44b8e060-df64-46c9-953c-4f6de3755323" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request>{
+<con:soapui-project id="bd901550-23ca-422b-a204-fa7a34d41c64" activeEnvironment="Default"
+  name="Taller API Jsonplaceholder" soapui-version="5.9.1" abortOnError="false" runType="SEQUENTIAL"
+  resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings />
+  <con:interface xsi:type="con:RestService" id="c2fa480d-073d-444b-8521-619dc373674b"
+    wadlVersion="http://wadl.dev.java.net/2009/02" name="https://jsonplaceholder.typicode.com"
+    type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings />
+    <con:definitionCache />
+    <con:endpoints>
+      <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+    </con:endpoints>
+
+    <!-- ===== RECURSO /users ===== -->
+    <con:resource name="Usuarios" path="/users" id="r001-users">
+      <con:settings />
+      <con:parameters />
+
+      <!-- GET /users -->
+      <con:method name="GET Listar" id="m001-get-users" method="GET">
+        <con:settings />
+        <con:parameters />
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params />
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 1 GET Listar todos los usuarios"
+          id="dd7a8fab-cd3a-4b3e-83ed-823fc1f9c131" mediaType="application/json"
+          postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+              &lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+          <con:request />
+          <con:originalUri>https://jsonplaceholder.typicode.com/users</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+          <con:jmsPropertyConfig />
+          <con:parameters />
+        </con:request>
+      </con:method>
+
+      <!-- Subrecurso /users/1 -->
+      <con:resource name="Usuario ID=1" path="/1" id="r002-user-1">
+        <con:settings />
+        <con:parameters />
+        <con:method name="GET por ID" id="m002-get-user-1" method="GET">
+          <con:settings />
+          <con:parameters />
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params />
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:request name="Request 2 GET Usuario por ID=1"
+            id="b3c75135-24a4-40e4-8b80-ec096c59e4cf" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+            <con:request />
+            <con:originalUri>https://jsonplaceholder.typicode.com/users/1</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+        </con:method>
+      </con:resource>
+
+      <!-- Subrecurso /users/999 -->
+      <con:resource name="Usuario Inexistente ID=999" path="/999" id="r003-user-999">
+        <con:settings />
+        <con:parameters />
+        <con:method name="GET inexistente" id="m003-get-user-999" method="GET">
+          <con:settings />
+          <con:parameters />
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>404</con:status>
+            <con:params />
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:request name="Request 3 GET Usuario inexistente ID=999"
+            id="ced01d82-264b-4a60-826b-358424ef0bbd" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+            <con:request />
+            <con:originalUri>https://jsonplaceholder.typicode.com/users/999</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+        </con:method>
+      </con:resource>
+    </con:resource>
+
+    <!-- ===== RECURSO /posts ===== -->
+    <con:resource name="Posts" path="/posts" id="r004-posts">
+      <con:settings />
+      <con:parameters />
+
+      <!-- GET /posts?userId=1 -->
+      <con:method name="GET Posts por userId" id="m004-get-posts" method="GET">
+        <con:settings />
+        <con:parameters>
+          <con:parameter name="userId" style="QUERY">
+            <con:value>1</con:value>
+          </con:parameter>
+        </con:parameters>
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>200</con:status>
+          <con:params />
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:request name="Request 4 GET Posts del usuario ID=1"
+          id="acf234f1-b6eb-45f9-a074-6cc854d7a96e" mediaType="application/json"
+          postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+              &lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+          <con:request />
+          <con:originalUri>https://jsonplaceholder.typicode.com/posts?userId=1</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+          <con:jmsPropertyConfig />
+          <con:parameters>
+            <con:entry key="userId" value="1" />
+          </con:parameters>
+        </con:request>
+      </con:method>
+
+      <!-- POST /posts -->
+      <con:method name="POST Crear post" id="m005-post-posts" method="POST">
+        <con:settings />
+        <con:parameters />
+        <con:representation type="RESPONSE">
+          <con:mediaType>application/json; charset=utf-8</con:mediaType>
+          <con:status>201</con:status>
+          <con:params />
+          <con:element>Response</con:element>
+        </con:representation>
+        <con:representation type="REQUEST">
+          <con:mediaType>application/json</con:mediaType>
+          <con:params />
+        </con:representation>
+        <con:request name="Request 5 POST Crear post nuevo"
+          id="44b8e060-df64-46c9-953c-4f6de3755323" mediaType="application/json"
+          postQueryString="false">
+          <con:settings>
+            <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+              &lt;xml-fragment/></con:setting>
+          </con:settings>
+          <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+          <con:request>{
+  "title": "Taller Pruebas Politécnico 2026",
+  "body": "Post creado desde SoapUI por equipo Politécnico",
+  "userId": 1
+}</con:request>
+          <con:originalUri>https://jsonplaceholder.typicode.com/posts</con:originalUri>
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+          <con:jmsPropertyConfig />
+          <con:parameters />
+        </con:request>
+      </con:method>
+
+      <!-- Subrecurso /posts/1 -->
+      <con:resource name="Post ID=1" path="/1" id="r005-post-1">
+        <con:settings />
+        <con:parameters />
+
+        <!-- PUT /posts/1 -->
+        <con:method name="PUT Reemplazar post" id="m006-put-post-1" method="PUT">
+          <con:settings />
+          <con:parameters />
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params />
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params />
+          </con:representation>
+          <con:request name="Request 6 PUT Actualizar post ID=1"
+            id="89c744bc-f8d5-4326-b139-d1fb23ad63f1" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+            <con:request>{
   "id": 1,
   "title": "Post actualizado desde SoapUI — Politécnico",
   "body": "Cuerpo completamente reemplazado con PUT",
   "userId": 1
-}
-</con:request><con:originalUri>https://jsonplaceholder.typicode.com/posts</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Resquest 6 PUT Actualizar post ID=1" id="89c744bc-f8d5-4326-b139-d1fb23ad63f1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request>{
-  "id": 1,
-  "title": "Post actualizado desde SoapUI — Politécnico",
-  "body": "Cuerpo completamente reemplazado con PUT",
-  "userId": 1
-}
-</con:request><con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Resquest 7 DELETE Eliminar post ID=1" id="511975ae-bf70-40b3-b8fc-d0223a0728f9" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint><con:request/><con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+}</con:request>
+            <con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+        </con:method>
+
+        <!-- DELETE /posts/1 -->
+        <con:method name="DELETE Eliminar post" id="m007-delete-post-1" method="DELETE">
+          <con:settings />
+          <con:parameters />
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>200</con:status>
+            <con:params />
+            <con:element>Response</con:element>
+          </con:representation>
+          <con:request name="Request 7 DELETE Eliminar post ID=1"
+            id="511975ae-bf70-40b3-b8fc-d0223a0728f9" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>https://jsonplaceholder.typicode.com</con:endpoint>
+            <con:request />
+            <con:originalUri>https://jsonplaceholder.typicode.com/posts/1</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+        </con:method>
+      </con:resource>
+    </con:resource>
+
+  </con:interface>
+  <con:properties />
+  <con:wssContainer />
+  <con:oAuth2ProfileContainer />
+  <con:oAuth1ProfileContainer />
+  <con:sensitiveInformation />
+</con:soapui-project>

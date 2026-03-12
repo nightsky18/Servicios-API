@@ -1,121 +1,388 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<con:soapui-project id="98f7c04a-c019-4135-8af1-4b3ad52dce4e" activeEnvironment="Default" name="Taller API Empleados" soapui-version="5.9.1" abortOnError="false" runType="SEQUENTIAL" resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="ded9b336-eba7-4334-bf96-320fb7fc2833" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:3000" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://localhost:3000</con:endpoint></con:endpoints><con:resource name="" path="api/empleados" id="13e5e3f6-e020-42f5-8bc2-75430e64406b"><con:settings/><con:parameters/><con:resource name="empleados" path="" id="81ffe16b-9241-417b-bbe4-e4bd95d32604"><con:settings/><con:parameters/><con:method name="Method 1" id="effe7abb-c0d5-4afc-8475-b691e3e8264f" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType xsi:nil="true"/><con:status>0</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>201 200</con:status><con:params/><con:element xmlns:emp="http://localhost/api/empleados">emp:Response</con:element></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>400 404</con:status><con:params/><con:element xmlns:emp="http://localhost/api/empleados">emp:Fault</con:element></con:representation><con:request name="Request 1 POST - Crear Empleado BUENO_1" id="e6728efe-1dce-45b5-a4fe-600bf5ae4756" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry key="Content-Type" value="application/json" xmlns="http://eviware.com/soapui/config"/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request>{
-  "nombre": "Ana María QA",
-  "edad": 29,
-  "fechaContratacion": "2023-08-20T00:00:00Z",
-  "activo": true,
-  "habilidades": ["Postman", "SoapUI"],
-  "jefe": null,
-  "salarioPreciso": 3600000.75,
-  "metadata": {
-    "lastLogin": "2026-03-05T18:45:30Z",
-    "origen": "soapui"
-  },
-  "configuraciones": {
-    "idioma": "es",
-    "timezone": "America/Bogota"
-  },
-  "fotoPerfil": null
-}
-</con:request><con:originalUri>http://localhost/api/empleados</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request><con:request name="Request 2 POST BUENO_2 (Carlos QA Senior)" id="4e73fd2e-da56-4ef1-8e4c-f09fb246e261" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request>{
-  "nombre": "Carlos QA Senior",
-  "edad": 38,
-  "fechaContratacion": "2022-01-15T00:00:00Z",
-  "activo": false,
-  "habilidades": ["Node.js", "Testing"],
-  "jefe": null,
-  "salarioPreciso": 4800000.50,
-  "metadata": {
-    "nivel": "senior",
-    "herramientas": ["Jest", "Cypress"]
-  },
-  "configuraciones": {
-    "idioma": "en",
-    "timezone": "America/Bogota",
-    "moneda": "COP"
-  },
-  "fotoPerfil": null
-}
-</con:request><con:originalUri>http://localhost/api/empleados</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Request 3 POST MALO_1: Edad menor de 18" id="8f8f40c0-8898-42dd-b84b-e4aa53c2cba0" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request>{
-  "nombre": "Menor de Edad QA",
-  "edad": 17,
-  "fechaContratacion": "2024-05-10T00:00:00Z",
-  "activo": true,
-  "habilidades": ["JUnit"],
-  "jefe": null,
-  "salarioPreciso": 1500000,
-  "metadata": {
-    "comentario": "edad fuera de rango"
-  },
-  "configuraciones": {},
-  "fotoPerfil": null
-}
-</con:request><con:originalUri>http://localhost/api/empleados</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Request 4 POST MALO_2: Nombre muy corto" id="cabee98d-d837-4711-b681-ae3404d21ee1" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request>{
-  "nombre": "X",
-  "edad": 30,
-  "fechaContratacion": "2024-03-10T00:00:00Z",
-  "activo": true,
-  "habilidades": ["Selenium"],
-  "jefe": null,
-  "salarioPreciso": 3000000,
-  "metadata": {},
-  "configuraciones": {},
-  "fotoPerfil": null
-}
-</con:request><con:originalUri>http://localhost/api/empleados</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Request 5 POST MALO_3: Sin salarioPreciso text" id="c8efc860-fb4b-40c4-af54-d1658e52de63" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request>{
-  "nombre": "Sin Salario QA",
-  "edad": 45,
-  "fechaContratacion": "2021-11-01T00:00:00Z",
-  "activo": false,
-  "habilidades": ["API Testing"],
-  "jefe": null,
-  "metadata": {
-    "nota": "falta salarioPreciso"
-  },
-  "configuraciones": {},
-  "fotoPerfil": null
-}
-</con:request><con:originalUri>http://localhost/api/empleados</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Request 6 GET Listar todos" id="2ebbf709-d98a-455f-bba5-9bfcec9d31a2" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request/><con:originalUri>http://localhost/api/empleados</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Resquest 7  GET por ID (Ana)" id="ee15da9b-aab5-4730-ba5a-2d90b115a0e2" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request/><con:originalUri>http://localhost/api/empleados/69b0b08b6ed7ed248138a603</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Resquest 8 PATCH Actualizar parcialmente (Ana)" id="569adbed-04dd-47be-b6e3-51d070f75bde" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request>{
-  "salarioPreciso": 4500000,
-  "habilidades": ["Postman", "SoapUI", "JMeter"]
-}
-</con:request><con:originalUri>http://localhost/api/empleados/69b0b08b6ed7ed248138a603</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Resquest 9 DELETE Eliminar (Ana)" id="5f2d0f39-81a7-488b-94c4-864f2d110a96" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request/><con:originalUri>http://localhost/api/empleados/69b0b08b6ed7ed248138a603</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Resquest 10 PUT Reemplazar completamente (Carlos)" id="dd5477ac-8db9-4b18-b314-bdeb1a355152" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request>{
-  "nombre": "Carlos QA Senior Actualizado",
-  "edad": 39,
-  "fechaContratacion": "2022-01-15T00:00:00Z",
-  "activo": true,
-  "habilidades": ["Node.js", "Testing", "Docker", "Jenkins"],
-  "jefe": null,
-  "salarioPreciso": 5500000,
-  "metadata": {
-    "nivel": "senior",
-    "aniosExperiencia": 12,
-    "herramientas": ["Jest", "Cypress", "SoapUI"]
-  },
-  "configuraciones": {
-    "idioma": "es",
-    "timezone": "America/Bogota",
-    "moneda": "COP"
-  },
-  "fotoPerfil": null
-}
-</con:request><con:originalUri>http://localhost/api/empleados/69b0b08b6ed7ed248138a603</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="Request 11 PUT MALO: Actualizar un registro inexistente" id="e9019161-1d80-47b8-b5ad-48ae3dc60e8e" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:3000</con:endpoint><con:request>{
-  "nombre": "Carlos QA Senior Actualizado",
-  "edad": 39,
-  "fechaContratacion": "2022-01-15T00:00:00Z",
-  "activo": true,
-  "habilidades": ["Node.js", "Testing", "Docker", "Jenkins"],
-  "jefe": null,
-  "salarioPreciso": 5500000,
-  "metadata": {
-    "nivel": "senior",
-    "aniosExperiencia": 12,
-    "herramientas": ["Jest", "Cypress", "SoapUI"]
-  },
-  "configuraciones": {
-    "idioma": "es",
-    "timezone": "America/Bogota",
-    "moneda": "COP"
-  },
-  "fotoPerfil": null
-}</con:request><con:originalUri>http://localhost/api/empleados/000</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource><con:method name="1" id="f3b5e621-f177-4776-a4c1-7c66980b7844" method="GET"><con:settings/><con:parameters/><con:request name="Request 1" id="adf883a6-86fc-47d3-91ba-4346b043486c" mediaType="application/json"><con:settings/><con:endpoint>http://localhost:3000</con:endpoint><con:request/><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
+<con:soapui-project id="98f7c04a-c019-4135-8af1-4b3ad52dce4e" activeEnvironment="Default"
+  name="Taller API Empleados" soapui-version="5.9.1" abortOnError="false" runType="SEQUENTIAL"
+  resourceRoot="${projectDir}" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings />
+  <con:interface xsi:type="con:RestService" id="ded9b336-eba7-4334-bf96-320fb7fc2833"
+    wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:3000" type="rest"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings />
+    <con:definitionCache type="TEXT" rootPart="" />
+    <con:endpoints>
+      <con:endpoint>http://localhost:3000</con:endpoint>
+    </con:endpoints>
+    <con:resource name="" path="api/empleados" id="13e5e3f6-e020-42f5-8bc2-75430e64406b">
+      <con:settings />
+      <con:parameters />
+      <con:resource name="empleados" path="" id="81ffe16b-9241-417b-bbe4-e4bd95d32604">
+        <con:settings />
+        <con:parameters />
+        <con:method name="Method 1" id="effe7abb-c0d5-4afc-8475-b691e3e8264f" method="POST">
+          <con:settings />
+          <con:parameters />
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true" />
+            <con:status>0</con:status>
+            <con:params />
+            <con:element>data</con:element>
+          </con:representation>
+          <con:representation type="REQUEST">
+            <con:mediaType>application/json</con:mediaType>
+            <con:params />
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true" />
+            <con:status>0</con:status>
+            <con:params />
+            <con:element>data</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType xsi:nil="true" />
+            <con:status>0</con:status>
+            <con:params />
+            <con:element>data</con:element>
+          </con:representation>
+          <con:representation type="RESPONSE">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>201 200</con:status>
+            <con:params />
+            <con:element xmlns:emp="http://localhost/api/empleados">emp:Response</con:element>
+          </con:representation>
+          <con:representation type="FAULT">
+            <con:mediaType>application/json; charset=utf-8</con:mediaType>
+            <con:status>400 404</con:status>
+            <con:params />
+            <con:element xmlns:emp="http://localhost/api/empleados">emp:Fault</con:element>
+          </con:representation>
+          <con:request name="Request 1 POST - Crear Empleado BUENO_1"
+            id="e6728efe-1dce-45b5-a4fe-600bf5ae4756" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;entry
+                key="Content-Type" value="application/json"
+                xmlns="http://eviware.com/soapui/config"/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request>{
+              "nombre": "Ana María QA",
+              "edad": 29,
+              "fechaContratacion": "2023-08-20T00:00:00Z",
+              "activo": true,
+              "habilidades": ["Postman", "SoapUI"],
+              "jefe": null,
+              "salarioPreciso": 3600000.75,
+              "metadata": {
+              "lastLogin": "2026-03-05T18:45:30Z",
+              "origen": "soapui"
+              },
+              "configuraciones": {
+              "idioma": "es",
+              "timezone": "America/Bogota"
+              },
+              "fotoPerfil": null
+              }
+            </con:request>
+            <con:originalUri>http://localhost/api/empleados</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+            <con:parameterOrder />
+          </con:request>
+          <con:request name="Request 2 POST BUENO_2 (Carlos QA Senior)"
+            id="4e73fd2e-da56-4ef1-8e4c-f09fb246e261" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request>{
+              "nombre": "Carlos QA Senior",
+              "edad": 38,
+              "fechaContratacion": "2022-01-15T00:00:00Z",
+              "activo": false,
+              "habilidades": ["Node.js", "Testing"],
+              "jefe": null,
+              "salarioPreciso": 4800000.50,
+              "metadata": {
+              "nivel": "senior",
+              "herramientas": ["Jest", "Cypress"]
+              },
+              "configuraciones": {
+              "idioma": "en",
+              "timezone": "America/Bogota",
+              "moneda": "COP"
+              },
+              "fotoPerfil": null
+              }
+            </con:request>
+            <con:originalUri>http://localhost/api/empleados</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+          <con:request name="Request 3 POST MALO_1: Edad menor de 18"
+            id="8f8f40c0-8898-42dd-b84b-e4aa53c2cba0" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request>{
+              "nombre": "Menor de Edad QA",
+              "edad": 17,
+              "fechaContratacion": "2024-05-10T00:00:00Z",
+              "activo": true,
+              "habilidades": ["JUnit"],
+              "jefe": null,
+              "salarioPreciso": 1500000,
+              "metadata": {
+              "comentario": "edad fuera de rango"
+              },
+              "configuraciones": {},
+              "fotoPerfil": null
+              }
+            </con:request>
+            <con:originalUri>http://localhost/api/empleados</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+          <con:request name="Request 4 POST MALO_2: Nombre muy corto"
+            id="cabee98d-d837-4711-b681-ae3404d21ee1" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request>{
+              "nombre": "X",
+              "edad": 30,
+              "fechaContratacion": "2024-03-10T00:00:00Z",
+              "activo": true,
+              "habilidades": ["Selenium"],
+              "jefe": null,
+              "salarioPreciso": 3000000,
+              "metadata": {},
+              "configuraciones": {},
+              "fotoPerfil": null
+              }
+            </con:request>
+            <con:originalUri>http://localhost/api/empleados</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+          <con:request name="Request 5 POST MALO_3: Sin salarioPreciso text"
+            id="c8efc860-fb4b-40c4-af54-d1658e52de63" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request>{
+              "nombre": "Sin Salario QA",
+              "edad": 45,
+              "fechaContratacion": "2021-11-01T00:00:00Z",
+              "activo": false,
+              "habilidades": ["API Testing"],
+              "jefe": null,
+              "metadata": {
+              "nota": "falta salarioPreciso"
+              },
+              "configuraciones": {},
+              "fotoPerfil": null
+              }
+            </con:request>
+            <con:originalUri>http://localhost/api/empleados</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+          <con:request name="Request 6 GET Listar todos" id="2ebbf709-d98a-455f-bba5-9bfcec9d31a2"
+            mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request />
+            <con:originalUri>http://localhost/api/empleados</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+          <con:request name="Resquest 7  GET por ID (Ana)" id="ee15da9b-aab5-4730-ba5a-2d90b115a0e2"
+            mediaType="application/json">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request />
+            <con:originalUri>http://localhost/api/empleados/69b0b08b6ed7ed248138a603</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+          <con:request name="Resquest 8 PATCH Actualizar parcialmente (Ana)"
+            id="569adbed-04dd-47be-b6e3-51d070f75bde" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request>{
+              "salarioPreciso": 4500000,
+              "habilidades": ["Postman", "SoapUI", "JMeter"]
+              }
+            </con:request>
+            <con:originalUri>http://localhost/api/empleados/69b0b08b6ed7ed248138a603</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+          <con:request name="Resquest 9 DELETE Eliminar (Ana)"
+            id="5f2d0f39-81a7-488b-94c4-864f2d110a96" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request />
+            <con:originalUri>http://localhost/api/empleados/69b0b08b6ed7ed248138a603</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+          <con:request name="Resquest 10 PUT Reemplazar completamente (Carlos)"
+            id="dd5477ac-8db9-4b18-b314-bdeb1a355152" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request>{
+              "nombre": "Carlos QA Senior Actualizado",
+              "edad": 39,
+              "fechaContratacion": "2022-01-15T00:00:00Z",
+              "activo": true,
+              "habilidades": ["Node.js", "Testing", "Docker", "Jenkins"],
+              "jefe": null,
+              "salarioPreciso": 5500000,
+              "metadata": {
+              "nivel": "senior",
+              "aniosExperiencia": 12,
+              "herramientas": ["Jest", "Cypress", "SoapUI"]
+              },
+              "configuraciones": {
+              "idioma": "es",
+              "timezone": "America/Bogota",
+              "moneda": "COP"
+              },
+              "fotoPerfil": null
+              }
+            </con:request>
+            <con:originalUri>http://localhost/api/empleados/69b0b08b6ed7ed248138a603</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+          <con:request name="Request 11 PUT MALO: Actualizar un registro inexistente"
+            id="e9019161-1d80-47b8-b5ad-48ae3dc60e8e" mediaType="application/json"
+            postQueryString="false">
+            <con:settings>
+              <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">
+                &lt;xml-fragment/></con:setting>
+            </con:settings>
+            <con:endpoint>http://localhost:3000</con:endpoint>
+            <con:request>{
+              "nombre": "Carlos QA Senior Actualizado",
+              "edad": 39,
+              "fechaContratacion": "2022-01-15T00:00:00Z",
+              "activo": true,
+              "habilidades": ["Node.js", "Testing", "Docker", "Jenkins"],
+              "jefe": null,
+              "salarioPreciso": 5500000,
+              "metadata": {
+              "nivel": "senior",
+              "aniosExperiencia": 12,
+              "herramientas": ["Jest", "Cypress", "SoapUI"]
+              },
+              "configuraciones": {
+              "idioma": "es",
+              "timezone": "America/Bogota",
+              "moneda": "COP"
+              },
+              "fotoPerfil": null
+              }</con:request>
+            <con:originalUri>http://localhost/api/empleados/000</con:originalUri>
+            <con:credentials>
+              <con:authType>No Authorization</con:authType>
+            </con:credentials>
+            <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+            <con:jmsPropertyConfig />
+            <con:parameters />
+          </con:request>
+        </con:method>
+      </con:resource>
+      <con:method name="1" id="f3b5e621-f177-4776-a4c1-7c66980b7844" method="GET">
+        <con:settings />
+        <con:parameters />
+        <con:request name="Request 1" id="adf883a6-86fc-47d3-91ba-4346b043486c"
+          mediaType="application/json">
+          <con:settings />
+          <con:endpoint>http://localhost:3000</con:endpoint>
+          <con:request />
+          <con:credentials>
+            <con:authType>No Authorization</con:authType>
+          </con:credentials>
+          <con:jmsConfig JMSDeliveryMode="PERSISTENT" />
+          <con:jmsPropertyConfig />
+          <con:parameters />
+        </con:request>
+      </con:method>
+    </con:resource>
+  </con:interface>
+  <con:properties />
+  <con:wssContainer />
+  <con:oAuth2ProfileContainer />
+  <con:oAuth1ProfileContainer />
+  <con:sensitiveInformation />
+</con:soapui-project>
